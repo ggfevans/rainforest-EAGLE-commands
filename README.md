@@ -68,6 +68,7 @@ This project was developed with assistance from Claude (Anthropic) via Warp AI A
 - Script implementation and testing
 - Documentation and markdown conversion
 - Troubleshooting and debugging
+- Content creation and editing
 
 The project requirements, API understanding, and system integration decisions were human-directed.
 

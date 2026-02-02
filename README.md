@@ -62,6 +62,15 @@ Meter connection status: **Not joined**
 
 This repo includes a copy and a derived markdown reference of the Rainforest Automation EAGLE-200 Local API Manual. Copyright remains with Rainforest Automation, Inc. The manual was retrieved on Feb 1, 2026 from the URL above.
 
+## AI Use Disclosure
+
+This project was developed with assistance from Claude (Anthropic) via Warp AI Agent Mode. AI was used for:
+- Script implementation and testing
+- Documentation and markdown conversion
+- Troubleshooting and debugging
+
+The project requirements, API understanding, and system integration decisions were human-directed.
+
 ## License
 
 Code in this repository is licensed under the MIT License (see `LICENSE`). This license does not apply to `EAGLE-200-Local-API-Manual-v1.0.pdf` or `EAGLE-200-Local-API-Manual-v1.0.md`.

@@ -52,7 +52,7 @@ Meter connection status: **Not joined**
 
 ## Useful Info
 
-- Local web interface: http://10.0.0.50 (login: Cloud ID / Install Code)
+- Local web interface: http://{EAGLE device IP}:80 (login: Cloud ID / Install Code)
 - Cloud portal: https://portal.rainforestcloud.com/user/home
 - Rainforest support: https://support.rainforestautomation.com
 - BC Hydro Rainforest page: https://www.bchydro.com/powersmart/residential/tools-and-calculators/rainforest-devices.html

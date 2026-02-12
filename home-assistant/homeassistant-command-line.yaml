@@ -1,0 +1,31 @@
+# Add this to configuration.yaml.
+# If you already have a command_line: section, copy only the "- sensor:" block below.
+#
+# Files expected on your Home Assistant instance:
+#   /config/eagle/eagle-meter-status.py
+#   /config/eagle/.env
+
+command_line:
+  - sensor:
+      name: Eagle Meter Connection Status
+      unique_id: eagle_meter_connection_status
+      command: "python3 /config/eagle/eagle-meter-status.py"
+      scan_interval: 60
+      value_template: "{{ value_json.status }}"
+      json_attributes:
+        - connected
+        - last_contact
+        - network_address
+        - ok
+        - error
+        - ts
+        - eagle_address
+        - cloud_id
+        - meter_address
+
+# Optional: a binary sensor that is on only when the meter is connected
+# template:
+#   - binary_sensor:
+#       - name: Eagle Meter Connected
+#         unique_id: eagle_meter_connected
+#         state: "{{ state_attr('sensor.eagle_meter_connection_status', 'connected') | default(false) }}"

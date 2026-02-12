@@ -13,5 +13,5 @@ else
   echo "=== Querying Meter (from buffer) ==="
 fi
 
-eagle_api "<Command><n>device_query</n><DeviceDetails><HardwareAddress>${EAGLE_METER_ADDRESS}</HardwareAddress></DeviceDetails><Components><Component><n>Main</n><Variables><Variable><n>zigbee:InstantaneousDemand</n>${REFRESH}</Variable></Variables></Component></Components></Command>"
+eagle_api "<Command><Name>device_query</Name><DeviceDetails><HardwareAddress>${EAGLE_METER_ADDRESS}</HardwareAddress></DeviceDetails><Components><Component><Name>Main</Name><Variables><Variable><Name>zigbee:InstantaneousDemand</Name>${REFRESH}</Variable></Variables></Component></Components></Command>"
 echo ""

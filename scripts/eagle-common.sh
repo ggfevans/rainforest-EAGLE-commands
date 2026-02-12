@@ -17,8 +17,10 @@ fi
 # Common curl function for EAGLE local API
 eagle_api() {
   local command_xml="$1"
+
   curl --silent --anyauth \
     -u "${EAGLE_CLOUD_ID}:${EAGLE_INSTALL_CODE}" \
+    -H 'Content-Type: text/xml' \
     -XPOST "http://${EAGLE_ADDRESS}/cgi-bin/post_manager" \
-    -d "$command_xml"
+    --data-binary "$command_xml"
 }

@@ -5,5 +5,5 @@
 source "$(dirname "$0")/eagle-common.sh"
 
 echo "=== EAGLE-200 Meter Details ==="
-eagle_api "<Command><n>device_details</n><DeviceDetails><HardwareAddress>${EAGLE_METER_ADDRESS}</HardwareAddress></DeviceDetails></Command>"
+eagle_api "<Command><Name>device_details</Name><DeviceDetails><HardwareAddress>${EAGLE_METER_ADDRESS}</HardwareAddress></DeviceDetails></Command>"
 echo ""

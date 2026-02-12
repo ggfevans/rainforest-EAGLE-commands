@@ -11,9 +11,20 @@ echo ""
 
 response=$(eagle_api '<Command><Name>device_list</Name></Command>')
 
-status=$(echo "$response" | sed -n 's/.*<ConnectionStatus>\(.*\)<\/ConnectionStatus>.*/\1/p')
-last_contact=$(echo "$response" | sed -n 's/.*<LastContact>\(.*\)<\/LastContact>.*/\1/p')
-network_addr=$(echo "$response" | sed -n 's/.*<NetworkAddress>\(.*\)<\/NetworkAddress>.*/\1/p')
+# device_list can include multiple <Device> entries; select the configured meter.
+response_flat=$(printf '%s' "$response" | tr -d '\r\n')
+meter_device=$(printf '%s' "$response_flat" \
+  | sed 's#</Device>#</Device>\n#g' \
+  | grep -F "<HardwareAddress>${EAGLE_METER_ADDRESS}</HardwareAddress>" \
+  | head -n 1)
+
+if [[ -z "$meter_device" ]]; then
+  meter_device="$response_flat"
+fi
+
+status=$(printf '%s' "$meter_device" | sed -n 's/.*<ConnectionStatus>\(.*\)<\/ConnectionStatus>.*/\1/p')
+last_contact=$(printf '%s' "$meter_device" | sed -n 's/.*<LastContact>\(.*\)<\/LastContact>.*/\1/p')
+network_addr=$(printf '%s' "$meter_device" | sed -n 's/.*<NetworkAddress>\(.*\)<\/NetworkAddress>.*/\1/p')
 
 echo "Connection Status: ${status:-UNKNOWN}"
 echo "Last Contact:      ${last_contact:-UNKNOWN}"

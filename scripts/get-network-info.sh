@@ -5,5 +5,5 @@
 source "$(dirname "$0")/eagle-common.sh"
 
 echo "=== EAGLE-200 Network Info ==="
-eagle_api '<Command><n>get_network_info</n></Command>'
+eagle_api '<Command><Name>get_network_info</Name></Command>'
 echo ""

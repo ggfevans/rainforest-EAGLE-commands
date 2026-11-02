@@ -52,7 +52,7 @@ Meter connection status: **Not joined**
 - EAGLE hardware, firmware, network, and cloud are all healthy
 - ZigBee radio is active (solid green LED)
 - Smart meter is not accepting join requests
-- BC Hydro request submitted: #18785050
+- BC Hydro request submitted
 - Rainforest Automation support ticket also submitted
 - Waiting for BC Hydro to re-provision the meter for HAN communication
 
